@@ -1,1 +1,2 @@
-live link https://bengolbay.netlify.app/#process
+live link https://bengolbay.netlify.app
+
