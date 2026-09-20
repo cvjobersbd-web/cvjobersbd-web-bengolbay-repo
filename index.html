@@ -2,7 +2,8 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#163844">
   <title>Bengol Bay • Real Goods Trading</title>
 
   <!-- Favicon (ব্রাউজার ট্যাবের আইকন) -->
@@ -40,6 +41,13 @@
   </script>
 
   <style>
+    /* মোবাইল বেস: টেক্সট সাইজ ঠিক রাখা, আড়াআড়ি স্ক্রল বন্ধ, নচ/সেফ-এরিয়া */
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body { overflow-x: hidden; padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+    img, iframe { max-width: 100%; }
+    .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+
     /* বাংলা টেক্সটে মাত্রা ও নিচের অংশ যেন না কাটে */
     .bn-heading { line-height: 1.32; }
     .bn-body    { line-height: 1.85; }
@@ -59,20 +67,23 @@
     }
   </style>
 </head>
-<body class="font-sans bg-brand-light text-gray-800 pb-16">
+<body class="font-sans bg-brand-light text-gray-800 pb-10 sm:pb-16" style="padding-bottom: max(2.5rem, env(safe-area-inset-bottom));">
 
   <!-- ========== HEADER ========== -->
   <header class="bg-brand-dark py-4">
-    <div class="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-4">
-      <a href="https://bengolbay.com/" class="flex items-center gap-4 group">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-nowrap items-center justify-between gap-2">
+      <!-- বাম পাশ: লোগো ও নাম -->
+      <a href="https://bengolbay.com/" class="flex items-center gap-2 sm:gap-4 group min-w-0">
         <img src="https://i.ibb.co.com/nNH8f7zx/facebook-Logo.png" alt="Bengol Bay Logo"
-             class="rounded-xl bg-white px-2 py-1 object-contain group-hover:scale-105 transition" style="height: 52px;">
-        <div class="text-white font-bold text-2xl tracking-tight">
+             class="rounded-xl bg-white px-1.5 py-0.5 sm:px-2 sm:py-1 object-contain group-hover:scale-105 transition shrink-0"
+             style="height: 44px;">
+        <div class="text-white font-bold text-lg sm:text-2xl tracking-tight truncate">
           Bengol <span class="text-brand-blue font-extrabold">Bay</span>
         </div>
       </a>
+      <!-- ডান পাশ: বাটন -->
       <a href="https://bengolbay.com/" target="_blank"
-         class="inline-flex items-center gap-2 bg-brand-blue hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow-blue-lg transition-all duration-200 hover:-translate-y-0.5">
+         class="inline-flex items-center gap-1.5 sm:gap-2 bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-blue-lg transition-all duration-200 hover:-translate-y-0.5 shrink-0">
         <i class="fas fa-external-link-alt"></i> bengolbay.com
       </a>
     </div>
@@ -80,7 +91,7 @@
 
   <!-- ========== HERO (full-bleed, main-এর বাইরে) ========== -->
   <section class="hero-glow relative overflow-hidden bg-gradient-to-br from-brand-dark via-[#16404f] to-brand-deep text-white">
-    <div class="relative z-10 max-w-7xl mx-auto px-6 py-16 lg:py-24 grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-24 grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-16 items-center">
 
       <!-- বাঁ পাশ -->
       <div>
@@ -98,8 +109,8 @@
         </p>
 
         <div class="flex flex-wrap items-center gap-4 mb-10">
-          <a href="https://bengolbay.com/" target="_blank"
-             class="inline-flex items-center gap-3 bg-brand-blue hover:bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-full shadow-blue-lg transition hover:-translate-y-0.5">
+          <a href="https://bengolbay.com/trader-registration/" target="_blank"
+             class="inline-flex items-center gap-3 bg-brand-blue hover:bg-blue-600 text-white font-bold text-base sm:text-lg px-7 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-blue-lg transition hover:-translate-y-0.5">
             <i class="fas fa-rocket"></i> এখনই শুরু করুন
           </a>
           <a href="#process"
@@ -109,7 +120,7 @@
         </div>
 
         <!-- ট্রাস্ট পয়েন্ট: ডিভাইডার দিয়ে আলাদা, আলাদা বক্স নয় -->
-        <div class="flex flex-wrap gap-x-8 gap-y-4 pt-7 border-t border-white/12">
+        <div class="flex flex-wrap gap-x-6 sm:gap-x-8 gap-y-3 sm:gap-y-4 pt-6 sm:pt-7 border-t border-white/12">
           <div class="flex items-center gap-2.5 text-blue-50/90">
             <i class="fas fa-shield-halved text-brand-blue"></i>
             <span class="font-medium">KYC যাচাইকৃত</span>
@@ -140,40 +151,191 @@
               <span class="text-blue-50/90 font-medium">ট্রেডিং প্রক্রিয়া ভিডিও</span>
             </div>
           </div>
-          <p class="text-blue-100/60 text-sm text-center py-3">২ মিনিটে সম্পূর্ণ প্রক্রিয়া</p>
+          <!-- ভিডিওর নিচের ক্যাপশন -->
+          <p class="text-blue-100/70 text-sm text-center py-3">How to Create account in bengol bay</p>
         </div>
       </div>
 
     </div>
   </section>
 
-  <main class="max-w-7xl mx-auto px-6 pt-16">
+  <!-- ========== রেজিস্ট্রেশন সেকশন ========== -->
+  <section class="max-w-7xl mx-auto px-6 -mt-10 lg:-mt-16 relative z-20">
+    <div class="bg-white rounded-3xl shadow-blue border border-brand-blue/20 p-5 sm:p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div class="text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 bg-brand-blue/10 text-brand-blue px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-4 max-w-full text-left">
+          <i class="fas fa-user-plus"></i> নতুন ট্রেডার? মাত্র ২ মিনিটে অ্যাকাউন্ট খুলুন
+        </div>
+        <h2 class="bn-heading text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+          এখনই আইডি খুলুন / রেজিস্ট্রেশন করুন
+        </h2>
+        <p class="bn-body text-gray-600 text-base sm:text-lg max-w-2xl">
+          Register করুন, Wallet রিচার্জ করুন এবং সাথে সাথে ট্রেডিং শুরু করুন — KYC লাগবে শুধু Withdrawal-এর সময়।
+        </p>
+        <div class="flex flex-wrap gap-x-6 gap-y-3 mt-5 text-sm text-gray-500 justify-center lg:justify-start">
+          <span class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-blue"></i> দ্রুত রেজিস্ট্রেশন</span>
+          <span class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-blue"></i> তাৎক্ষণিক ট্রেডিং</span>
+          <span class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-blue"></i> পরে KYC</span>
+        </div>
+      </div>
+      <div class="flex flex-col gap-3 w-full sm:w-auto shrink-0">
+        <a href="https://bengolbay.com/trader-registration/" target="_blank"
+           class="inline-flex items-center justify-center gap-3 bg-brand-blue hover:bg-blue-600 text-white font-bold text-base sm:text-lg px-5 sm:px-9 py-3.5 sm:py-4 rounded-full shadow-blue-lg transition hover:-translate-y-0.5 sm:whitespace-nowrap w-full sm:w-auto">
+          <i class="fas fa-user-plus"></i> এখনই রেজিস্ট্রেশন করুন
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ভিডিও টিউটোরিয়াল (একত্রিত সেকশন) ========== -->
+  <section id="tutorials" class="max-w-7xl mx-auto px-6 pt-14 sm:pt-20 scroll-mt-8">
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+      <div class="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-1.5 rounded-full text-sm font-semibold mb-5">
+        <i class="fab fa-youtube"></i> ভিডিও টিউটোরিয়াল
+      </div>
+      <h2 class="bn-heading text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark mb-4">দেখে দেখে শিখুন, সম্পূর্ণ বাংলায়</h2>
+      <div class="w-20 h-1.5 bg-brand-blue rounded-full mx-auto mb-5"></div>
+      <p class="bn-body text-gray-600 text-base sm:text-lg">
+        Product Box কেনা, রিচার্জ ও Withdrawal — তিনটি গুরুত্বপূর্ণ কাজের ধাপে ধাপে গাইড।
+      </p>
+    </div>
+
+    <div id="ytTrack" class="relative flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-pl-6 -mx-6 px-6 md:mx-0 md:px-0 pt-1 pb-6 md:py-0 no-scrollbar" style="-webkit-overflow-scrolling: touch;">
+      <article class="group snap-start shrink-0 w-[82%] sm:w-[56%] md:w-auto bg-white rounded-3xl shadow-soft border border-gray-100 overflow-hidden flex flex-col transition md:hover:-translate-y-1 hover:shadow-blue">
+        <!-- ভিডিও (৯:১৬) — ক্লিক করলে লোড হয় -->
+        <div class="relative px-5 pt-5 sm:px-6 sm:pt-6 flex justify-center">
+          <div data-yt="A7Jfcls76bg" data-title="Bengol Bay-এ Product Box কীভাবে কিনবেন? | Step by Step Tutorial"
+               class="yt-facade relative w-full max-w-[220px] sm:max-w-[240px] aspect-[9/16] rounded-2xl overflow-hidden bg-black cursor-pointer border border-gray-100 shadow-blue">
+            <img alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition"
+                 src="https://i.ytimg.com/vi/A7Jfcls76bg/hqdefault.jpg" onerror="this.remove()">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+            <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+              <i class="fab fa-youtube"></i> Shorts
+            </span>
+            <span class="absolute inset-0 flex items-center justify-center">
+              <span class="w-14 h-14 rounded-full bg-white/95 flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+                <i class="fas fa-play text-red-600 text-lg ml-1"></i>
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <!-- টেক্সট -->
+        <div class="p-5 sm:p-7 flex flex-col flex-grow">
+          <div class="inline-flex items-center gap-2 self-start bg-red-50 text-red-600 px-3.5 py-1 rounded-full text-sm font-semibold mb-4">
+            <i class="fas fa-box-open"></i> Product Box
+          </div>
+          <h3 class="bn-heading text-xl font-bold text-brand-dark mb-2">Product Box কীভাবে কিনবেন?</h3>
+          <p class="bn-body text-gray-600 text-[0.95rem] mb-6 flex-grow">Product Box নির্বাচন, পেমেন্ট ও বরাদ্দ — ধাপে ধাপে সম্পূর্ণ বাংলায়।</p>
+          <a href="https://youtube.com/shorts/A7Jfcls76bg" target="_blank"
+             class="inline-flex items-center justify-center gap-2 border border-gray-200 text-brand-dark hover:bg-brand-dark hover:text-white hover:border-brand-dark font-semibold px-5 py-3 rounded-full transition">
+            <i class="fab fa-youtube text-red-600 group-hover:text-red-500"></i> ইউটিউবে দেখুন
+          </a>
+        </div>
+      </article>
+
+      <article class="group snap-start shrink-0 w-[82%] sm:w-[56%] md:w-auto bg-white rounded-3xl shadow-soft border border-gray-100 overflow-hidden flex flex-col transition md:hover:-translate-y-1 hover:shadow-blue">
+        <!-- ভিডিও (৯:১৬) — ক্লিক করলে লোড হয় -->
+        <div class="relative px-5 pt-5 sm:px-6 sm:pt-6 flex justify-center">
+          <div data-yt="1coLPGAnN30" data-title="Bengol Bay-তে খুব সহজে bKash দিয়ে রিচার্জ করুন"
+               class="yt-facade relative w-full max-w-[220px] sm:max-w-[240px] aspect-[9/16] rounded-2xl overflow-hidden bg-black cursor-pointer border border-gray-100 shadow-blue">
+            <img alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition"
+                 src="https://i.ytimg.com/vi/1coLPGAnN30/hqdefault.jpg" onerror="this.remove()">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+            <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+              <i class="fab fa-youtube"></i> Shorts
+            </span>
+            <span class="absolute inset-0 flex items-center justify-center">
+              <span class="w-14 h-14 rounded-full bg-white/95 flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+                <i class="fas fa-play text-pink-600 text-lg ml-1"></i>
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <!-- টেক্সট -->
+        <div class="p-5 sm:p-7 flex flex-col flex-grow">
+          <div class="inline-flex items-center gap-2 self-start bg-pink-50 text-pink-600 px-3.5 py-1 rounded-full text-sm font-semibold mb-4">
+            <i class="fas fa-mobile-screen-button"></i> bKash রিচার্জ
+          </div>
+          <h3 class="bn-heading text-xl font-bold text-brand-dark mb-2">bKash দিয়ে Wallet রিচার্জ</h3>
+          <p class="bn-body text-gray-600 text-[0.95rem] mb-6 flex-grow">মাত্র কয়েকটি ধাপে দ্রুত ও নিরাপদে bKash-এর মাধ্যমে রিচার্জ করুন।</p>
+          <a href="https://youtube.com/shorts/1coLPGAnN30" target="_blank"
+             class="inline-flex items-center justify-center gap-2 border border-gray-200 text-brand-dark hover:bg-brand-dark hover:text-white hover:border-brand-dark font-semibold px-5 py-3 rounded-full transition">
+            <i class="fab fa-youtube text-red-600 group-hover:text-red-500"></i> ইউটিউবে দেখুন
+          </a>
+        </div>
+      </article>
+
+      <article class="group snap-start shrink-0 w-[82%] sm:w-[56%] md:w-auto bg-white rounded-3xl shadow-soft border border-gray-100 overflow-hidden flex flex-col transition md:hover:-translate-y-1 hover:shadow-blue">
+        <!-- ভিডিও (৯:১৬) — ক্লিক করলে লোড হয় -->
+        <div class="relative px-5 pt-5 sm:px-6 sm:pt-6 flex justify-center">
+          <div data-yt="we4nAJrj7y0" data-title="Bengol Bay Withdrawal Process | কীভাবে টাকা Withdraw করবেন | Step by Step Guide"
+               class="yt-facade relative w-full max-w-[220px] sm:max-w-[240px] aspect-[9/16] rounded-2xl overflow-hidden bg-black cursor-pointer border border-gray-100 shadow-blue">
+            <img alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition"
+                 src="https://i.ytimg.com/vi/we4nAJrj7y0/hqdefault.jpg" onerror="this.remove()">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+            <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+              <i class="fab fa-youtube"></i> Shorts
+            </span>
+            <span class="absolute inset-0 flex items-center justify-center">
+              <span class="w-14 h-14 rounded-full bg-white/95 flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+                <i class="fas fa-play text-green-600 text-lg ml-1"></i>
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <!-- টেক্সট -->
+        <div class="p-5 sm:p-7 flex flex-col flex-grow">
+          <div class="inline-flex items-center gap-2 self-start bg-green-50 text-green-600 px-3.5 py-1 rounded-full text-sm font-semibold mb-4">
+            <i class="fas fa-money-bill-transfer"></i> Withdrawal
+          </div>
+          <h3 class="bn-heading text-xl font-bold text-brand-dark mb-2">টাকা Withdraw করার নিয়ম</h3>
+          <p class="bn-body text-gray-600 text-[0.95rem] mb-6 flex-grow">KYC ও Payout Account verify থাকলে সহজেই Wallet থেকে টাকা উত্তোলন করুন।</p>
+          <a href="https://youtube.com/shorts/we4nAJrj7y0" target="_blank"
+             class="inline-flex items-center justify-center gap-2 border border-gray-200 text-brand-dark hover:bg-brand-dark hover:text-white hover:border-brand-dark font-semibold px-5 py-3 rounded-full transition">
+            <i class="fab fa-youtube text-red-600 group-hover:text-red-500"></i> ইউটিউবে দেখুন
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <!-- মোবাইলে সোয়াইপ ইন্ডিকেটর -->
+    <div id="ytDots" class="md:hidden flex items-center justify-center gap-2 -mt-1" aria-hidden="true">
+      <span class="h-2 w-6 rounded-full bg-brand-blue transition-all"></span>
+      <span class="h-2 w-2 rounded-full bg-gray-300 transition-all"></span>
+      <span class="h-2 w-2 rounded-full bg-gray-300 transition-all"></span>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-6 pt-14 sm:pt-16">
 
     <!-- ========== PROCESS (এখন সবার উপরে) ========== -->
-    <section id="process" class="mb-20 scroll-mt-8">
-      <h2 class="bn-heading text-3xl md:text-4xl font-bold text-brand-dark mb-4">Real Goods Trading Process</h2>
+    <section id="process" class="mb-14 sm:mb-20 scroll-mt-8">
+      <h2 class="bn-heading text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark mb-4">Real Goods Trading Process</h2>
       <div class="w-20 h-1.5 bg-brand-blue rounded-full mb-6"></div>
-      <p class="bn-body text-gray-600 text-lg max-w-3xl mb-10">
+      <p class="bn-body text-gray-600 text-base sm:text-lg max-w-3xl mb-8 sm:mb-10">
         Product Box নির্বাচন থেকে Verified Resale ও Settlement পর্যন্ত সম্পূর্ণ প্রক্রিয়া চারটি সহজ ধাপে।
       </p>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-white rounded-2xl p-7 shadow-soft border border-gray-100 border-t-4 border-t-brand-blue flex flex-col">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-soft border border-gray-100 border-t-4 border-t-brand-blue flex flex-col">
           <div class="text-sm font-bold text-brand-blue mb-3 tracking-wide">ধাপ ০১</div>
           <h3 class="bn-heading text-lg font-bold text-brand-dark mb-3">Verified Product Box নির্বাচন</h3>
           <p class="bn-body text-gray-600 text-sm flex-grow">Marketplace থেকে যাচাইকৃত পণ্যের Product Box দেখুন, মূল্য ও স্টক যাচাই করে পছন্দেরটি নির্বাচন করুন।</p>
         </div>
-        <div class="bg-white rounded-2xl p-7 shadow-soft border border-gray-100 border-t-4 border-t-brand-blue flex flex-col">
+        <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-soft border border-gray-100 border-t-4 border-t-brand-blue flex flex-col">
           <div class="text-sm font-bold text-brand-blue mb-3 tracking-wide">ধাপ ০২</div>
           <h3 class="bn-heading text-lg font-bold text-brand-dark mb-3">Product Box বরাদ্দ নিন</h3>
           <p class="bn-body text-gray-600 text-sm flex-grow">প্রয়োজনীয় পেমেন্ট সম্পন্ন করুন। যাচাই শেষে নির্বাচিত Product Box আপনার অ্যাকাউন্টে বরাদ্দ হবে।</p>
         </div>
-        <div class="bg-white rounded-2xl p-7 shadow-soft border border-gray-100 border-t-4 border-t-brand-blue flex flex-col">
+        <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-soft border border-gray-100 border-t-4 border-t-brand-blue flex flex-col">
           <div class="text-sm font-bold text-brand-blue mb-3 tracking-wide">ধাপ ০৩</div>
           <h3 class="bn-heading text-lg font-bold text-brand-dark mb-3">Bengol Bay Resale পরিচালনা করে</h3>
           <p class="bn-body text-gray-600 text-sm flex-grow">Operations Team নির্ধারিত Verified Resale Process-এর মাধ্যমে পণ্য বিক্রয় ও সংশ্লিষ্ট কার্যক্রম পরিচালনা করে।</p>
         </div>
-        <div class="bg-white rounded-2xl p-7 shadow-soft border border-gray-100 border-t-4 border-t-brand-blue flex flex-col">
+        <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-soft border border-gray-100 border-t-4 border-t-brand-blue flex flex-col">
           <div class="text-sm font-bold text-brand-blue mb-3 tracking-wide">ধাপ ০৪</div>
           <h3 class="bn-heading text-lg font-bold text-brand-dark mb-3">Settlement পান</h3>
           <p class="bn-body text-gray-600 text-sm flex-grow">Resale সম্পন্ন হলে প্রাপ্য অর্থ Wallet-এ দেখা যাবে এবং যাচাইকৃত Payout Account-এ উত্তোলনের অনুরোধ করা যাবে।</p>
@@ -182,27 +344,27 @@
     </section>
 
     <!-- ========== ৪টি ফিচার (স্বচ্ছ ও নির্ভরযোগ্য ট্রেডিং — এখন প্রসেসের পরে) ========== -->
-    <section class="mb-20">
-      <h2 class="bn-heading text-3xl md:text-4xl font-bold text-brand-dark mb-4">স্বচ্ছ ও নির্ভরযোগ্য ট্রেডিং</h2>
-      <div class="w-20 h-1.5 bg-brand-blue rounded-full mb-10"></div>
+    <section class="mb-14 sm:mb-20">
+      <h2 class="bn-heading text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark mb-4">স্বচ্ছ ও নির্ভরযোগ্য ট্রেডিং</h2>
+      <div class="w-20 h-1.5 bg-brand-blue rounded-full mb-8 sm:mb-10"></div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-white rounded-2xl p-7 shadow-soft border border-gray-100 hover:border-brand-blue hover:shadow-blue transition-all duration-200">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-soft border border-gray-100 hover:border-brand-blue hover:shadow-blue transition-all duration-200">
           <div class="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center text-xl text-brand-blue mb-5"><i class="fas fa-id-card"></i></div>
           <h3 class="bn-heading text-xl font-bold text-brand-dark mb-3">KYC যাচাইকৃত অ্যাকাউন্ট</h3>
           <p class="bn-body text-gray-600 text-sm">পরিচয় যাচাইয়ের মাধ্যমে অ্যাকাউন্ট তৈরি করুন এবং স্বচ্ছ ও নির্ভরযোগ্য ট্রেডিং প্রক্রিয়ায় যুক্ত হন।</p>
         </div>
-        <div class="bg-white rounded-2xl p-7 shadow-soft border border-gray-100 hover:border-brand-blue hover:shadow-blue transition-all duration-200">
+        <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-soft border border-gray-100 hover:border-brand-blue hover:shadow-blue transition-all duration-200">
           <div class="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center text-xl text-brand-blue mb-5"><i class="fas fa-tags"></i></div>
           <h3 class="bn-heading text-xl font-bold text-brand-dark mb-3">স্বচ্ছ মূল্য, লাভ ও ফি</h3>
           <p class="bn-body text-gray-600 text-sm">ট্রেড শুরুর আগেই পণ্যের মূল্য, সম্ভাব্য লাভ, Platform Fee ও অন্যান্য প্রযোজ্য খরচ পরিষ্কারভাবে দেখুন।</p>
         </div>
-        <div class="bg-white rounded-2xl p-7 shadow-soft border border-gray-100 hover:border-brand-blue hover:shadow-blue transition-all duration-200">
+        <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-soft border border-gray-100 hover:border-brand-blue hover:shadow-blue transition-all duration-200">
           <div class="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center text-xl text-brand-blue mb-5"><i class="fas fa-timeline"></i></div>
           <h3 class="bn-heading text-xl font-bold text-brand-dark mb-3">ট্রেড টাইমলাইন ট্র্যাকিং</h3>
           <p class="bn-body text-gray-600 text-sm">Product Box নির্বাচন থেকে Resale ও Settlement পর্যন্ত গুরুত্বপূর্ণ আপডেট Dashboard থেকেই অনুসরণ করুন।</p>
         </div>
-        <div class="bg-white rounded-2xl p-7 shadow-soft border border-gray-100 hover:border-brand-blue hover:shadow-blue transition-all duration-200">
+        <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-soft border border-gray-100 hover:border-brand-blue hover:shadow-blue transition-all duration-200">
           <div class="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center text-xl text-brand-blue mb-5"><i class="fas fa-wallet"></i></div>
           <h3 class="bn-heading text-xl font-bold text-brand-dark mb-3">ওয়ালেট ও উত্তোলন ব্যবস্থা</h3>
           <p class="bn-body text-gray-600 text-sm">Verified Resale সম্পন্ন হওয়ার পর Settlement-এর তথ্য Wallet ও যাচাইকৃত Payout Account-এর মাধ্যমে অনুসরণ করুন।</p>
@@ -211,48 +373,48 @@
     </section>
 
     <!-- ========== ALL-IN-ONE ========== -->
-    <section class="mb-20">
-      <div class="bg-brand-dark rounded-3xl p-10 md:p-14 text-white flex flex-wrap items-center justify-between gap-8">
-        <h2 class="bn-heading text-3xl md:text-4xl font-bold max-w-2xl">
+    <section class="mb-14 sm:mb-20">
+      <div class="bg-brand-dark rounded-3xl p-6 sm:p-10 md:p-14 text-white flex flex-wrap items-center justify-between gap-8">
+        <h2 class="bn-heading text-2xl sm:text-3xl md:text-4xl font-bold max-w-2xl">
           এক প্ল্যাটফর্মে সম্পূর্ণ সমাধান
         </h2>
         <a href="https://bengolbay.com/" target="_blank"
-           class="bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg whitespace-nowrap shadow-lg flex items-center gap-3 transition hover:-translate-y-0.5">
+           class="bg-brand-blue hover:bg-blue-600 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-base sm:text-lg sm:whitespace-nowrap shadow-lg flex items-center justify-center gap-3 w-full sm:w-auto transition hover:-translate-y-0.5">
           <i class="fas fa-arrow-right"></i> All-in-One প্ল্যাটফর্ম
         </a>
       </div>
 
-      <p class="bn-body mt-7 text-lg text-gray-600 max-w-4xl">
+      <p class="bn-body mt-6 sm:mt-7 text-base sm:text-lg text-gray-600 max-w-4xl">
         Product Box নির্বাচন, Payment Verification, Trade Tracking, Verified Resale, Settlement ও Wallet Management—পুরো প্রক্রিয়া একটি সমন্বিত ডিজিটাল প্ল্যাটফর্ম থেকে পরিচালনা করুন।
       </p>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-        <div class="bg-white rounded-2xl p-7 shadow-soft border border-gray-100 hover:border-brand-blue transition duration-200">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12">
+        <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-soft border border-gray-100 hover:border-brand-blue transition duration-200">
           <div class="w-14 h-14 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-2xl text-brand-blue mb-5"><i class="fas fa-store"></i></div>
           <h3 class="bn-heading text-xl font-bold text-brand-dark mb-2.5">Real Goods Marketplace</h3>
           <p class="bn-body text-gray-600 text-sm">বিভিন্ন ক্যাটাগরির যাচাইকৃত পণ্যের Product Box দেখুন এবং মূল্য ও স্টক যাচাই করে নির্বাচন করুন।</p>
         </div>
-        <div class="bg-white rounded-2xl p-7 shadow-soft border border-gray-100 hover:border-brand-blue transition duration-200">
+        <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-soft border border-gray-100 hover:border-brand-blue transition duration-200">
           <div class="w-14 h-14 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-2xl text-brand-blue mb-5"><i class="fas fa-chart-line"></i></div>
           <h3 class="bn-heading text-xl font-bold text-brand-dark mb-2.5">Live Trade Tracking</h3>
           <p class="bn-body text-gray-600 text-sm">Product Box নির্বাচন থেকে Settlement পর্যন্ত Trade Status ও আপডেট Dashboard থেকে অনুসরণ করুন।</p>
         </div>
-        <div class="bg-white rounded-2xl p-7 shadow-soft border border-gray-100 hover:border-brand-blue transition duration-200">
+        <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-soft border border-gray-100 hover:border-brand-blue transition duration-200">
           <div class="w-14 h-14 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-2xl text-brand-blue mb-5"><i class="fas fa-wallet"></i></div>
           <h3 class="bn-heading text-xl font-bold text-brand-dark mb-2.5">Wallet & Settlement</h3>
           <p class="bn-body text-gray-600 text-sm">Verified Resale সম্পন্ন হওয়ার পর Wallet Balance ও প্রযোজ্য Payout তথ্য সহজেই দেখুন।</p>
         </div>
-        <div class="bg-white rounded-2xl p-7 shadow-soft border border-gray-100 hover:border-brand-blue transition duration-200">
+        <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-soft border border-gray-100 hover:border-brand-blue transition duration-200">
           <div class="w-14 h-14 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-2xl text-brand-blue mb-5"><i class="fas fa-file-invoice"></i></div>
           <h3 class="bn-heading text-xl font-bold text-brand-dark mb-2.5">Verified Resale Report</h3>
           <p class="bn-body text-gray-600 text-sm">প্রযোজ্য লাভ, ফি ও Settlement তথ্যের ভিত্তিতে ট্রেডের পূর্ণ হিসাব অনুসরণ করুন।</p>
         </div>
-        <div class="bg-white rounded-2xl p-7 shadow-soft border border-gray-100 hover:border-brand-blue transition duration-200">
+        <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-soft border border-gray-100 hover:border-brand-blue transition duration-200">
           <div class="w-14 h-14 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-2xl text-brand-blue mb-5"><i class="fas fa-money-bill-wave"></i></div>
           <h3 class="bn-heading text-xl font-bold text-brand-dark mb-2.5">Wallet Withdrawal</h3>
           <p class="bn-body text-gray-600 text-sm">KYC ও Payout Account verification সম্পন্ন হলে Available Balance থেকে Withdrawal Request করুন।</p>
         </div>
-        <div class="bg-white rounded-2xl p-7 shadow-soft border border-gray-100 hover:border-brand-blue transition duration-200">
+        <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-soft border border-gray-100 hover:border-brand-blue transition duration-200">
           <div class="w-14 h-14 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-2xl text-brand-blue mb-5"><i class="fas fa-bell"></i></div>
           <h3 class="bn-heading text-xl font-bold text-brand-dark mb-2.5">Trade Notifications</h3>
           <p class="bn-body text-gray-600 text-sm">Payment Verification, KYC, Trade Progress, Settlement ও Withdrawal-এর আপডেট Dashboard-এ দেখুন।</p>
@@ -261,37 +423,43 @@
     </section>
 
     <!-- ========== যোগাযোগ ========== -->
-    <section class="bg-white rounded-3xl p-10 md:p-14 shadow-soft border border-gray-100 flex flex-wrap items-center justify-between gap-8">
-      <div>
-        <h2 class="bn-heading text-3xl md:text-4xl font-bold text-brand-dark mb-4">যোগাযোগ করুন</h2>
-        <p class="bn-body text-gray-600 text-lg max-w-lg mb-6">
+    <section class="bg-white rounded-3xl p-6 sm:p-10 md:p-14 shadow-soft border border-gray-100 flex flex-wrap items-center justify-between gap-8">
+      <div class="w-full lg:w-auto lg:flex-1 min-w-0">
+        <h2 class="bn-heading text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark mb-4">যোগাযোগ করুন</h2>
+        <p class="bn-body text-gray-600 text-base sm:text-lg max-w-lg mb-6">
           যেকোনো প্রশ্ন বা সহায়তার জন্য হোয়াটসঅ্যাপে মেসেজ করুন। আমরা দ্রুত সাড়া দিই।
         </p>
-        <div class="inline-flex items-center gap-5 bg-[#f0f7ff] border border-brand-blue/30 px-7 py-4 rounded-full">
-          <i class="fab fa-whatsapp text-[#25D366] text-3xl"></i>
-          <a href="https://wa.me/8801805407058" target="_blank" class="text-brand-dark font-bold text-2xl tracking-wide hover:text-brand-blue transition">
+
+        <!-- WhatsApp নাম্বার কার্ড -->
+        <div class="inline-flex flex-wrap items-center gap-2.5 sm:gap-5 bg-[#f0f7ff] border border-brand-blue/30 px-4 sm:px-7 py-3 sm:py-4 rounded-2xl sm:rounded-full max-w-full">
+          <i class="fab fa-whatsapp text-[#25D366] text-2xl sm:text-3xl shrink-0"></i>
+          <a href="https://wa.me/8801805407058" target="_blank"
+             class="text-brand-dark font-bold text-lg sm:text-2xl tracking-wide hover:text-brand-blue transition break-all">
             01805-407058
           </a>
         </div>
+
         <div class="mt-5">
-          <a href="https://bengolbay.com/" target="_blank" class="text-brand-blue font-semibold hover:underline inline-flex items-center gap-2">
+          <a href="https://bengolbay.com/" target="_blank"
+             class="text-brand-blue font-semibold hover:underline inline-flex items-center gap-2 text-sm sm:text-base">
             <i class="fas fa-globe"></i> অফিসিয়াল ওয়েবসাইট: bengolbay.com
           </a>
         </div>
       </div>
-      <div class="flex flex-col gap-3">
+
+      <div class="flex flex-col gap-3 w-full lg:w-auto">
         <a href="https://wa.me/8801805407058" target="_blank"
-           class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-lg px-9 py-4 rounded-full shadow-lg transition hover:-translate-y-0.5">
-          <i class="fab fa-whatsapp text-2xl"></i> WhatsApp মেসেজ
+           class="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-base sm:text-lg px-6 sm:px-9 py-3.5 sm:py-4 rounded-full shadow-lg transition hover:-translate-y-0.5 w-full">
+          <i class="fab fa-whatsapp text-xl sm:text-2xl"></i> WhatsApp মেসেজ
         </a>
-        <a href="https://bengolbay.com/" target="_blank"
-           class="inline-flex items-center gap-3 bg-brand-dark hover:bg-brand-blue text-white font-bold text-lg px-9 py-4 rounded-full shadow-lg transition hover:-translate-y-0.5">
-          <i class="fas fa-external-link-alt"></i> ওয়েবসাইটে যান
+        <a href="https://bengolbay.com/trader-registration/" target="_blank"
+           class="inline-flex items-center justify-center gap-3 bg-brand-dark hover:bg-brand-blue text-white font-bold text-base sm:text-lg px-6 sm:px-9 py-3.5 sm:py-4 rounded-full shadow-lg transition hover:-translate-y-0.5 w-full">
+          <i class="fas fa-user-plus"></i> রেজিস্ট্রেশন করুন
         </a>
       </div>
     </section>
 
-    <footer class="text-center pt-12 mt-8 border-t border-gray-200 text-gray-600 text-sm">
+    <footer class="text-center pt-10 sm:pt-12 mt-8 border-t border-gray-200 text-gray-600 text-sm">
       <p>© 2025 Bengol Bay — Real Goods Trading Platform |
         <a href="https://bengolbay.com/" target="_blank" class="text-brand-blue font-semibold hover:underline">bengolbay.com</a>
       </p>
@@ -301,8 +469,8 @@
   </main>
 
   <script>
-    // এখানে আপনার আসল YouTube ভিডিও আইডি বসান
-    const VIDEO_ID = "dQw4w9WgXcQ";
+    // আপনার YouTube ভিডিও আইডি (How to Create account in bengol bay)
+    const VIDEO_ID = "UK5X9cPxCn4";
 
     const frame = document.getElementById('videoFrame');
     const thumb = document.getElementById('videoThumb');
@@ -314,6 +482,39 @@
         title="Bengol Bay Real Goods Trading"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>`;
+    });
+
+    // মোবাইল ক্যারোসেল: স্ক্রলের সাথে ডট আপডেট
+    (function () {
+      const track = document.getElementById('ytTrack');
+      const dots = document.querySelectorAll('#ytDots span');
+      if (!track || !dots.length) return;
+      const cards = Array.from(track.children);
+      function update() {
+        const mid = track.scrollLeft + track.clientWidth / 2;
+        let idx = 0, best = Infinity;
+        cards.forEach((c, i) => {
+          const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid);
+          if (d < best) { best = d; idx = i; }
+        });
+        if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 4) idx = cards.length - 1;
+        dots.forEach((dot, i) => {
+          dot.className = 'h-2 rounded-full transition-all ' + (i === idx ? 'w-6 bg-brand-blue' : 'w-2 bg-gray-300');
+        });
+      }
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+    })();
+
+    // টিউটোরিয়াল কার্ড: ক্লিক করলে Shorts ভিডিও লোড হবে
+    document.querySelectorAll('.yt-facade').forEach(el => {
+      el.addEventListener('click', () => {
+        el.innerHTML = `<iframe class="absolute inset-0 w-full h-full border-0"
+          src="https://www.youtube.com/embed/${el.dataset.yt}?autoplay=1&rel=0"
+          title="${el.dataset.title}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>`;
+      }, { once: true });
     });
   </script>
 
